@@ -17,7 +17,7 @@ Cloud functions accept a JSON parameters dictionary on the `request` object, so 
 ```javascript
 Parse.Cloud.define("averageStars", function(request, response) {
   const query = new Parse.Query("Review");
-  query.equalTo("movie", request.params.movie);
+  query.equalTo("movie", request.params.movie)
     .find()
     .then((results) => {
       let sum = 0;
